@@ -1,0 +1,17 @@
+<form (ngSubmit)="addTask()">
+    <div class="form-control">
+        <label for="text">text</label>
+        <input type="text" class="form-control" id="text" required [(ngModel)]="text" name="text" #textInput="ngModel">
+        
+        <p *ngIf="textInput.invalid && textInput.touched" class="alert alert-danger"> Text is required.</p>
+    </div>
+    <div class="form-control">
+        <label for="text">day</label>
+        <input type="text" class="form-control" id="day" required [(ngModel)]="day" name="day">
+    </div>
+    <div class="form-control">
+        <label for="text">Set Reminder</label>
+        <input type="checkbox" id="reminder" [(ngModel)]="reminder" name="reminder">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Task</button>
+</form>
