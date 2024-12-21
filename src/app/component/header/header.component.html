@@ -1,0 +1,7 @@
+<p>header works!</p>
+<app-button
+  color="{{ showStatus ? 'red' : 'blue' }}"
+  text="{{ showStatus ? 'close' : 'Add' }}"
+  (btnClick)="toggleAddTask()"
+>
+</app-button>
