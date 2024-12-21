@@ -1,5 +1,11 @@
-<button 
-[ngStyle]="{'background-color':color, 'font-weight': 'bold', 'font-size.px':20}"
-  class="btn btn-primary" (click)="onClick()">
-{{ text }}
+<button
+  [ngStyle]="{
+    'background-color': color,
+    'font-weight': 'bold',
+    'font-size.px': 20
+  }"
+  class="btn btn-primary"
+  (click)="onClick()"
+>
+  {{ text }}
 </button>

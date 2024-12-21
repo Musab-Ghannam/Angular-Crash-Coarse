@@ -5,13 +5,13 @@ import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
   private apiUrl = 'https://api-generator.retool.com/GqoIwP/data';
-  task: Task[] = Tasks
+  task: Task[] = Tasks;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getTasks(): Observable<Task[]> {
     return this.http.get<Task[]>(this.apiUrl);
@@ -24,10 +24,10 @@ export class TaskService {
 
   toggleTask(task: Task): Observable<Task> {
     const url = `${this.apiUrl}/${task.id}`;
-    return this.http.put<Task>(url, task)
+    return this.http.put<Task>(url, task);
   }
 
   addTask(task: Task): Observable<Task> {
-    return this.http.post<Task>(this.apiUrl, task)
+    return this.http.post<Task>(this.apiUrl, task);
   }
 }
